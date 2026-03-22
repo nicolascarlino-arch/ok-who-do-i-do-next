@@ -18,7 +18,7 @@ import waterskiPyramid from "./images/waterski_pyramid.jpg";
 import waterskiTeam from "./images/waterski_team.jpg";
 import barefooter from "./images/Barefooter.jpg";
 import childhoodDock from "./images/childhood-dock.jpg";
-import valentinoVid from "./images/secuencia_valentino.mp4";
+import Vid from "./images/secuencia_valentino.mp4";
 import lvVid from "./images/LV_INSTAGRAM_.mp4";
 
 import "../styles/pitch-deck.css";
