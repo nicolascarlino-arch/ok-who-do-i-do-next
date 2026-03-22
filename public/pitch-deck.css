@@ -1,0 +1,1159 @@
+/* ============================================
+0. BASE LAYOUT / RESET
+============================================ */
+html,
+body {
+margin: 0;
+padding: 0;
+background: #fafaf8;
+}
+body {
+font-family: "Inter", system-ui, -apple-system,
+BlinkMacSystemFont, "SF Pro Text",
+"Helvetica Neue", Arial, sans-serif;
+color: #111;
+}
+/* Global headings */
+h1,
+h2,
+h3 {
+font-family: "Inter", -apple-system, sans-serif;
+letter-spacing: -0.02em;
+font-weight: 700;
+margin-bottom: 24px;
+}
+h1 {
+font-size: 42px;
+margin-top: 40px;
+}
+h2 {
+font-size: 32px;
+margin-top: 60px;
+}
+h3 {
+font-size: 24px;
+margin-top: 36px;
+}
+/* Generic text block */
+.text-block {
+margin-bottom: 24px;
+line-height: 1.55;
+font-size: 18px;
+color: #333;
+}
+.text-block strong {
+font-weight: 600;
+color: #000;
+}
+/* Quotes */
+.quote {
+font-size: 22px;
+font-style: italic;
+opacity: 0.7;
+margin: 40px 0;
+}
+/* Pitch deck root */
+.pitch-deck {
+font-family: inherit;
+color: #111;
+background: #fafaf8;
+}
+/* ============================================
+1. PROGRESS BAR & NAV
+============================================ */
+.scroll-progress {
+position: fixed;
+top: 0;
+left: 0;
+height: 2px;
+background: linear-gradient(90deg, #111 0%, #666 100%);
+z-index: 1000;
+}
+.deck-nav {
+position: fixed;
+top: 10px;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(10, 10, 10, 0.9);
+color: #f7f5f0;
+padding: 6px 18px;
+border-radius: 0;
+font-size: 11px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+display: flex;
+gap: 12px;
+align-items: center;
+z-index: 900;
+}
+.nav-title {
+font-weight: 600;
+}
+.nav-creator {
+opacity: 0.75;
+}
+/* ============================================
+2. SECTIONS / PARALLAX
+============================================ */
+.section {
+position: relative;
+width: 100%;
+padding: 80px 9vw;
+box-sizing: border-box;
+max-width: none;
+margin: 0;
+}
+.section + .section {
+border-top: 1px solid rgba(0, 0, 0, 0.08);
+padding-top: 70px;
+}
+.full-screen {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+.parallax-container {
+position: absolute;
+inset: 0;
+overflow: hidden;
+z-index: 0;
+}
+.parallax-image {
+position: absolute;
+inset: 0;
+background-size: cover;
+background-position: center;
+transform: scale(1.1);
+transition: transform 0.3s ease-out;
+object-fit: cover;
+}
+/* Generic content overlay fade */
+.fade-content {
+position: relative;
+z-index: 1;
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* ============================================
+3. HERO
+============================================ */
+.hero-fixed-layout {
+display: block;
+padding: 0;
+position: relative;
+min-height: 100vh;
+}
+.hero-title-block {
+position: absolute;
+top: 10vh;
+left: 8vw;
+font-size: clamp(60px, 7vw, 90px);
+line-height: 1.05;
+font-weight: 400;
+color: #ffffff;
+max-width: 40vw;
+}
+.hero-tagline-block {
+position: absolute;
+bottom: 12vh;
+right: 6vw;
+text-align: right;
+max-width: 320px;
+}
+.hero-subtitle {
+margin: 0 0 10px;
+font-size: clamp(22px, 2.2vw, 34px);
+font-weight: 400;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+line-height: 1.35;
+color: #ffffff;
+}
+.hero-credit {
+margin: 0;
+font-size: clamp(16px, 1.6vw, 24px);
+letter-spacing: 0.12em;
+color: #ffffff;
+opacity: 0.95;
+}
+/* ============================================
+4. OPENING QUOTE
+============================================ */
+.quote-section {
+color: #f6f1e8;
+}
+.quote-content {
+width: 100%;
+max-width: 820px;
+margin: 0 auto;
+display: flex;
+justify-content: center;
+text-align: center;
+}
+.poetic-quote {
+font-size: clamp(42px, 6vw, 62px);
+line-height: 1.3;
+margin: 0;
+color: #ffffff;
+text-shadow: 0 3px 20px rgba(0, 0, 0, 0.6);
+}
+.quote-subline {
+font-size: 14px;
+opacity: 0.85;
+}
+/* ============================================
+5. DUAL IMAGE SECTION
+============================================ */
+.dual-image-section {
+padding: 0;
+}
+.dual-image-left,
+.dual-image-right {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 50%;
+background-size: cover;
+background-position: center;
+z-index: 0;
+}
+.dual-image-left {
+left: 0;
+}
+.dual-image-right {
+right: 0;
+}
+.left-text-box {
+position: relative;
+z-index: 1;
+max-width: 920px;
+color: #f7f4ee;
+padding: 80px 9vw;
+}
+.left-quote {
+font-size: clamp(42px, 6vw, 62px);
+line-height: 1.5;
+margin: 0;
+text-shadow: 0 3px 16px rgba(0, 0, 0, 0.65);
+}
+/* ============================================
+6. SHOWER SECTION (hook)
+============================================ */
+.shower-section {
+color: #f6f1ea;
+}
+.shower-content {
+width: 100%;
+}
+.bottom-left {
+position: absolute;
+left: 9vw;
+bottom: 80px;
+}
+.emotional-hook {
+font-size: clamp(32px, 5vw, 52px);
+line-height: 1.5;
+margin: 0;
+color: #ffffff;
+text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+}
+/* ============================================
+7. GENERIC TEXT SECTIONS
+============================================ */
+.section-title {
+font-size: 30px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+margin: 0 0 18px;
+}
+/* CONCEPT – dark bg, texte blanc */
+.concept-section {
+background: #050505;
+color: #f5f3ee;
+}
+.concept-content {
+max-width: 900px;
+margin: 0 auto;
+}
+.concept-lead {
+font-size: 22px;
+line-height: 1.7;
+margin-bottom: 18px;
+}
+.concept-body {
+font-size: 22px;
+line-height: 1.7;
+}
+.concept-question {
+font-weight: 600;
+}
+/* Statement section */
+.statement-section {
+background: #050505;
+color: #f5f3ee;
+}
+.statement-content {
+max-width: 900px;
+margin: 0 auto;
+}
+.statement-text {
+background: rgba(5, 5, 5, 0.9);
+color: #f7f2e8;
+padding: 28px 26px;
+border-radius: 0;
+max-width: 620px;
+box-shadow: none;
+}
+.statement-paragraph {
+font-size: 14px;
+line-height: 1.7;
+margin: 0 0 10px;
+}
+.statement-signature {
+margin: 12px 0 0;
+font-size: 13px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+opacity: 0.9;
+}
+/* ============================================
+8. TONAL COMPARISONS (COMPS)
+============================================ */
+.comps-section {
+padding: 5rem 0 6rem;
+background: #050505;
+color: #f5f3ee;
+}
+.comps-section .section-title {
+text-align: center;
+font-size: 18px;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+}
+.comps-content {
+max-width: 1180px;
+margin: 0 auto;
+padding: 0 4vw;
+}
+.comps-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 40px;
+margin-top: 40px;
+}
+.comp-item {
+background: rgba(0, 0, 0, 0.9);
+border-radius: 0;
+border-top: 1px solid rgba(255, 255, 255, 0.18);
+padding-bottom: 22px;
+display: flex;
+flex-direction: column;
+color: #f6f0e6;
+}
+.comp-image {
+height: 210px;
+background-size: cover;
+background-position: center;
+filter: saturate(0.9) contrast(0.95);
+}
+.comp-title {
+margin: 18px 20px 14px;
+font-size: 13px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+}
+.comp-meta {
+margin: 0 20px 18px;
+font-size: 11px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+opacity: 0.8;
+}
+.comp-desc {
+margin: 0 20px;
+font-size: 0.9rem;
+line-height: 1.7;
+opacity: 0.9;
+}
+/* ============================================
+9. CHARACTERS
+============================================ */
+.characters-section {
+background: #050505;
+color: #f5f3ee;
+}
+.characters-content {
+max-width: 900px;
+margin: 0 auto;
+}
+.characters-grid-two {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 24px;
+margin-top: 24px;
+}
+.character-card {
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+background:
+radial-gradient(circle at top left,
+rgba(255, 255, 255, 0.16),
+transparent 52%)
+,
+rgba(0, 0, 0, 0.55);
+border: 1px solid rgba(255, 255, 255, 0.14);
+padding: 1.8rem 1.8rem 2.2rem;
+color: #f5f3ee;
+}
+.character-card-full {
+margin-top: 32px;
+}
+.character-image {
+width: 100%;
+height: 220px;
+border-radius: 0;
+background-size: cover;
+background-position: center;
+margin-bottom: 16px;
+filter: saturate(0.9) contrast(0.95);
+}
+.character-name {
+font-size: 16px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+margin: 0;
+}
+.character-age,
+.character-age2,
+.character-cara {
+font-size: 12px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+opacity: 0.9;
+margin: 0;
+}
+.character-desc,
+.character-body {
+font-size: 13px;
+line-height: 1.6;
+margin: 6px 0 0;
+}
+/* ============================================
+10. IMMATERIAL FORCES
+============================================ */
+.forces-section {
+background: #050505;
+color: #ffffff;
+}
+.forces-overlay {
+position: relative;
+z-index: 2;
+max-width: 1100px;
+margin: 0 auto;
+padding: 5rem 4vw;
+text-align: center;
+}
+.forces-title {
+text-align: left;
+font-size: 22px;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+}
+.forces-kicker {
+margin: 0.75rem 0 2.5rem;
+font-size: 0.95rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+opacity: 0.8;
+}
+.forces-columns {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 2.4rem;
+}
+.force-column {
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+background:
+radial-gradient(circle at top left,
+rgba(255, 255, 255, 0.16),
+transparent 52%)
+,
+rgba(0, 0, 0, 0.55);
+padding: 1.8rem 1.6rem 2.1rem;
+min-height: 260px;
+}
+.force-index {
+font-size: 0.8rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+opacity: 0.7;
+margin-bottom: 0.4rem;
+}
+.force-title {
+font-size: 0.95rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+margin: 0 0 1.2rem;
+}
+.force-cara {
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.16em;
+opacity: 0.85;
+margin: 0 0 2.4rem;
+}
+.force-desc {
+font-size: 0.9rem;
+line-height: 1.7;
+margin: 0;
+}
+/* ============================================
+11. EPISODES – CARD GRID (if used)
+============================================ */
+.episodes-grid {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 18px;
+margin-top: 24px;
+}
+.episode-card {
+background: #070707;
+color: #f7f2e8;
+border-radius: 0;
+padding: 16px 14px 18px;
+}
+.episode-num {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.18em;
+opacity: 0.8;
+margin-bottom: 6px;
+}
+.episode-title {
+font-size: 13px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin: 0 0 6px;
+}
+.episode-desc {
+font-size: 12px;
+line-height: 1.5;
+margin: 0;
+}
+/* ============================================
+12. SEASON / EPISODE BREAKDOWN – NANPU BRIDGE
+============================================ */
+.season-section {
+position: relative;
+min-height: 110vh;
+padding: 5rem 6vw 6rem;
+color: #f5f3ee;
+overflow: hidden;
+background: #050505; /* fallback si image ne charge pas */
+}
+.season-section .parallax-container {
+position: absolute;
+inset: 0;
+z-index: -1;/* important : derrière le tableau */
+}
+.season-section .parallax-image {
+width: 100%;
+height: 150%;
+top: -20%;
+background-size: cover;
+background-position: center bottom; /* on voit bien l’eau */
+background-repeat: no-repeat;
+transform: scale(1.05);
+filter: brightness(1.2) contrast(1.05) saturate(1.08);
+}
+.season-content {
+position: relative;
+z-index: 1;
+max-width: 1100px;
+margin: 0 auto;
+}
+/* Tableau breakdown glassy, centré */
+.season-table-wrapper {
+max-width: 1040px;
+margin: 2.5rem auto 0;
+background:
+radial-gradient(circle at top left,
+rgba(255, 255, 255, 0.16),
+transparent 52%)
+,
+rgba(0, 0, 0, 0.55);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+border: 1px solid rgba(255, 255, 255, 0.16);
+box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
+padding: 1.8rem 2rem;
+}
+.season-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 0.9rem;
+background: transparent;
+color: #f5f3ee;
+}
+.season-table th,
+.season-table td {
+padding: 0.6rem 0.9rem;
+background: transparent;
+border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.season-table th {
+font-weight: 600;
+font-size: 0.8rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+opacity: 0.9;
+}
+.season-table tr:last-child td {
+border-bottom: none;
+}
+/* ============================================
+13. BUDGET & FINANCING – VIDEO HERO
+============================================ */
+.budget-hero {
+position: relative;
+min-height: 140vh;
+color: #f5f3ee;
+overflow: hidden;
+background: radial-gradient(
+circle at center,
+rgba(30, 60, 90, 0.65) 0%,
+rgba(10, 20, 30, 0.95) 80%
+),
+#0b1520; /* bleu nuit sur les côtés */
+}
+.budget-hero-video {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 100%;
+width: auto;
+height: 140vh;
+object-fit: contain !important; /* ← on voit la vidéo en
+entier */
+filter: saturate(0.95) contrast(1.05);
+z-index: 0;
+}
+.budget-hero-overlay {
+position: relative;
+z-index: 1;
+min-height: 150vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-top: 0;
+}
+.budget-hero-content {
+max-width: 700px; /* plus étroit, ne dépasse pas le coeur
+de la vidéo */
+width: 100%;
+margin: 0 auto;
+padding: 0 2rem; /* petit padding interne, pas collé aux
+bords */
+}
+.budget-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1.8rem 2rem; /* un peu moins de gap pour que ça
+respire mieux */
+margin-top: 7.5rem;
+}
+.budget-table {
+margin: 0;
+background:
+radial-gradient(circle at top left,
+rgba(255, 255, 255, 0.18),
+transparent 80%)
+,
+rgba(0, 0, 0, 0.38); /* moins foncé qu’avant (0.55 → 0.38)
+*/
+backdrop-filter: blur(12px); /* blur plus soft */
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.14);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55); /* ombre un peu
+plus légère */
+padding: 1.6rem 1.8rem;
+color: #f4f1ea;
+overflow-x: auto;
+}
+.budget-subtitle {
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+margin: 0 0 1rem;
+opacity: 0.85;
+}
+.budget-table table {
+width: 100%;
+border-collapse: collapse;
+font-size: 0.9rem;
+color: inherit;
+}
+.budget-table th,
+.budget-table td {
+padding: 0.6rem 0.75rem;
+text-align: left;
+border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.budget-table th {
+font-weight: 600;
+opacity: 0.;
+}
+.budget-table tr:last-child td {
+border-bottom: none;
+}
+/* Bloc production structure en dessous – version légère, un seul
+edge */
+.budget-structure {
+max-width: 900px;
+margin: 3rem auto 0;
+background: none; /* plus d’overlay parent */
+border: none; /* plus de deuxième bordure */
+padding: 0;
+backdrop-filter: none;
+-webkit-backdrop-filter: none;
+}
+.budget-structure .budget-table {
+  background: rgba(255, 255, 255, 0.22) !important; /* verre clair */
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.budget-hero-content .section-title {
+text-align: center !important;
+width: 100%;
+}
+.budget-hero-overlay {
+text-align: center;
+}
+/* ============================================
+14. CREATOR CONTROL & IP – VIDEO FULL SCREEN
+============================================ */
+.ip-section {
+position: relative;
+min-height: 100vh;
+padding: 0;
+background: #000;
+color: #f5f3ee;
+overflow: hidden;
+}
+.ip-section.full-screen {
+min-height: 100vh;
+}
+.ip-bg-video {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: saturate(0.95) contrast(1.05);
+z-index: 0;
+}
+/* overlay texte */
+.ip-overlay {
+position: relative;
+z-index: 1;
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+padding: 6rem 6vw;
+}
+.ip-section .section-title {
+margin: 0;
+}
+/* grille 2x2 */
+.ip-quadrants {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 2.5rem 3rem;
+margin-top: 3rem;
+}
+.ip-quadrant {
+background:
+radial-gradient(circle at top left,
+rgba(255, 255, 255, 0.16),
+transparent 52%)
+,
+rgba(255, 255, 255, 0.55);
+backdrop-filter: blur(0.55px);
+-webkit-backdrop-filter: blur(0.55px);
+padding: 1.75rem 2rem;
+font-size: 0.9rem;
+line-height: 1.55;
+border: 1px solid rgba(255, 255, 255, 0.16);
+}
+.ip-quadrant h3 {
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+margin: 0 0 0.7rem;
+}
+.ip-quadrant p {
+margin: 0.2rem 0;
+}
+/* ============================================
+15. DEVELOPMENT / DISTRIBUTION
+============================================ */
+.dev-section {
+background: #fafaf8;
+color: #111;
+}
+.dev-layout {
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+gap: 2.5rem;
+align-items: stretch;
+margin-top: 2.5rem;
+}
+.dev-image {
+min-height: 280px;
+background-size: cover;
+background-position: center;
+}
+.dev-columns {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1.8rem;
+}
+.dev-block h3 {
+font-size: 0.95rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+margin: 0 0 0.6rem;
+}
+.dev-block ul {
+margin: 0;
+padding-left: 1.1rem;
+font-size: 0.95rem;
+line-height: 1.6;
+}
+.dev-block li + li {
+margin-top: 0.4rem;
+}
+/* ============================================
+16. IMAGE BREAK (full screen stills)
+============================================ */
+.image-break {
+position: relative;
+min-height: 100vh;
+overflow: hidden;
+}
+.image-break .parallax-container {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+}
+.image-break .parallax-image {
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+opacity: 1;
+}
+/* ============================================
+17. CLOSING STATEMENT (image bg + box left)
+============================================ */
+.closing-statement {
+position: relative;
+min-height: 100vh;
+overflow: hidden;
+color: #f5f3ee;
+}
+.closing-statement .parallax-container {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+}
+.closing-statement .parallax-image {
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+}
+.closing-overlay {
+position: relative;
+z-index: 1;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+padding: 8vh 6vw;
+}
+.closing-text-box {
+max-width: 520px;
+background: rgba(0, 0, 0, 0.24);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+padding: 2.25rem 2.5rem;
+margin-left: 0;
+margin-right: auto;
+}
+.closing-text-box p {
+margin: 0 0 0.75rem;
+line-height: 1.6;
+}
+/* ============================================
+18. CLOSING QUOTE – "YOU, BABE"
+============================================ */
+.closing-section {
+background: #fafaf8;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+.closing-content {
+max-width: 580px;
+}
+.closing-text {
+font-size: clamp(20px, 6vw, 70px); /* ← beaucoup plus grand */
+letter-spacing: 0.18em;
+text-transform: uppercase;
+margin: 0 0 16px;
+color: #d4d4d8;
+}
+/* ONLY "YOU, BABE." — closing reveal */
+.closing-answer {
+font-size: clamp(32px, 4vw, 64px); /* ≈ 4× plus gros */
+letter-spacing: 0.24em;
+text-transform: uppercase;
+margin-top: 32px;
+margin-bottom: 0;
+color: #111111; /* bien lisible sur fond blanc */
+}
+/* ============================================
+19. RESPONSIVE
+============================================ */
+@media (max-width: 900px) {
+.section {
+padding: 72px 20px;
+}
+.dual-image-left,
+.dual-image-right {
+width: 100%;
+opacity: 0.55;
+}
+.left-text-box {
+padding-top: 120px;
+}
+.bottom-left {
+position: static;
+margin-top: 120px;
+}
+.comps-grid,
+.characters-grid-two,
+.forces-columns,
+.episodes-grid,
+.budget-grid,
+.ip-quadrants,
+.dev-layout,
+.season-table {
+grid-template-columns: 1fr;
+}
+.dev-layout {
+grid-template-columns: 1fr;
+}
+.dev-image {
+min-height: 220px;
+}
+.budget-hero-overlay {
+padding-top: 6vh;
+}
+.ip-overlay {
+padding: 4.5rem 5vw;
+}
+.closing-overlay {
+padding: 6vh 4vw;
+}
+.closing-text-box {
+max-width: none;
+width: 100%;
+}
+}
+/* ===== CLOSING – BOOST "YOU, BABE." ONLY ===== */
+/* on remet tout à zéro pour le texte principal du closing */
+.closing-section .closing-text,
+.closing-section h2 {
+font-size: clamp(32px, 4vw, 48px);
+letter-spacing: 0.20em;
+text-transform: uppercase;
+color: #d7d7dd;
+}
+/* le dernier paragraphe de la section = "YOU, BABE." */
+.closing-section p:last-child {
+font-size: clamp(40px, 6vw, 80px); /* ≈ 4× plus gros que
+maintenant */
+letter-spacing: 0.28em;
+text-transform: uppercase;
+margin-top: 3rem;
+color: #111111; /* bien plus lisible que le
+gris clair */
+}
+/* ============================================
+12. SEASON / EPISODE BREAKDOWN – NANPU BRIDGE
+============================================ */
+.season-section {
+position: relative;
+min-height: 110vh;
+padding: 5rem 6vw 6rem;
+color: #f5f3ee;
+overflow: hidden;
+background: transparent;
+}
+.season-section .parallax-container {
+position: absolute;
+inset: 0;
+z-index: 0;
+}
+.season-section .parallax-image {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%; /* image plus haute pour "rouler" au
+scroll */
+top: 0;
+background-size: contain;
+background-position: center; /* on voit bien l’eau */
+background-repeat: no-repeat;
+transform: none;
+filter: brightness(1.2) contrast(1.05) saturate(1.08);
+}
+/* contenu au-dessus de l'image */
+.season-content,
+.season-section .fade-content {
+position: relative;
+z-index: 1;
+opacity: 1; /* ← pas de fade pour éviter de
+"disparaître" */
+transform: none;
+max-width: 1100px;
+margin: 0 auto;
+}
+/* Tableau breakdown glassy, centré */
+.season-table-wrapper {
+max-width: 1040px;
+margin: 2.5rem auto 0;
+background:
+radial-gradient(circle at top left,
+rgba(255, 255, 255, 0.16),
+transparent 52%)
+,
+rgba(0, 0, 0, 0.55);
+backdrop-filter: blur(28px);
+-webkit-backdrop-filter: blur(28px);
+border: 1px solid rgba(255, 255, 255, 0.16);
+box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+padding: 1.8rem 2rem;
+}
+.season-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 0.9rem;
+background: transparent;
+color: #f5f3ee;
+}
+.season-table th,
+.season-table td {
+padding: 0.6rem 0.9rem;
+background: transparent;
+border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.season-table th {
+font-weight: 600;
+font-size: 0.8rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+opacity: 0.9;
+}
+.season-table tr:last-child td {
+border-bottom: none;
+}
+/* 13. BUDGET & FINANCING – static panel style */
+.budget-section {
+position: relative;
+min-height: 100vh;
+padding: 5rem 6vw 6rem;
+background: #fafaf8; /* bords clairs comme ta slide */
+color: #f5f3ee;
+}
+.budget-section .section-title {
+text-align: center;
+letter-spacing: 0.18em;
+margin: 0 0 2.5rem;
+color: #111; /* titre noir comme sur ta capture */
+}
+.budget-inner {
+position: relative;
+z-index: 1;
+max-width: 1100px;
+margin: 0 auto;
+background: linear-gradient(180deg, #707070 0%, #4f4f4f 100%);
+box-shadow: 0 32px 90px rgba(0, 0, 0, 0.55);
+padding: 2.8rem 3.2rem;
+color: #f5f3ee;
+}
+/* Les petits blocs à l'intérieur du panneau */
+.budget-section .budget-table {
+background: transparent;
+box-shadow: none;
+border: none;
+margin: 0;
+padding: 1.6rem 0;
+}
+.budget-section .budget-table + .budget-table {
+border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.budget-section .budget-subtitle {
+margin: 0 0 1rem;
+}
+.budget-section .budget-table table {
+width: 100%;
+border-collapse: collapse;
+}
+.budget-section .budget-table td {
+border-bottom: none;
+padding: 0.4rem 0;
+}
+.budget-section .budget-table td:first-child {
+width: 32%;
+font-size: 0.8rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+opacity: 0.85;
+}
+.budget-section .budget-table td:last-child {
+font-size: 0.9rem;
+}
+/* ============================================
+FINAL PUNCHLINE – LIGHT GREY BG + FADED QUESTION
+============================================ */
+
+.closing-section {
+  background: #f1f1f1; /* gris clair, pas blanc */
+}
+
+.closing-section .closing-text {
+  color: rgba(0, 0, 0, 0.6); /* ≈ 40% plus foncé que ton gris actuel */
+  font-weight: 500;
+}
+
+.closing-section .hero-subline {
+  color: #111111; /* YOU, BABE. reste fort */
+}
+.ip-overlay * {
+  color: #111111 !important;
+}
