@@ -1,0 +1,123 @@
+---
+if (Astro.request.method === "POST") {
+  const data = await Astro.request.formData();
+  const password = data.get("password");
+
+  if (password === "okwhodoidonext2025") {
+    Astro.cookies.set("site-auth", "okwhodoidonext2025", {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+    return Astro.redirect("/");
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OK! Who Do I Do Next?</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        background: #0a0a0a;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter", system-ui, sans-serif;
+      }
+
+      .login-box {
+        text-align: center;
+        padding: 60px 40px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 4vw, 48px);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #f5f3ee;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 238, 0.45);
+        margin-bottom: 48px;
+      }
+
+      input[type="password"] {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(245, 243, 238, 0.35);
+        color: #f5f3ee;
+        font-size: 16px;
+        letter-spacing: 0.12em;
+        padding: 10px 4px;
+        width: 260px;
+        outline: none;
+        text-align: center;
+        display: block;
+        margin: 0 auto 32px;
+      }
+
+      input[type="password"]::placeholder {
+        color: rgba(245, 243, 238, 0.3);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      button {
+        background: transparent;
+        border: 1px solid rgba(245, 243, 238, 0.35);
+        color: #f5f3ee;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        padding: 12px 36px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: rgba(245, 243, 238, 0.08);
+        border-color: rgba(245, 243, 238, 0.7);
+      }
+
+      .error {
+        color: rgba(245, 243, 238, 0.5);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Ok! Who Do I Do Next?</h1>
+      <p class="subtitle">Created by Nicola Scarlino</p>
+
+      <form method="POST" enctype="application/x-www-form-urlencoded">
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          autofocus
+        />
+        <button type="submit">Enter</button>
+        {Astro.request.method === "POST" && (
+          <p class="error">Incorrect password</p>
+        )}
+      </form>
+    </div>
+  </body>
+</html>
