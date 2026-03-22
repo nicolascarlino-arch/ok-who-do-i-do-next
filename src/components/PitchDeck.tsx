@@ -108,7 +108,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${childBench.src})` }}
+            style={{ backgroundImage: `url(${childBench})` }}
           />
         </div>
 
@@ -138,7 +138,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${collageRight.src})` }}
+            style={{ backgroundImage: `url(${collageRight})` }}
           />
         </div>
         <div className="quote-content fade-content">
@@ -155,11 +155,11 @@ export default function PitchDeck() {
       >
         <div
           className="dual-image-left"
-          style={{ backgroundImage: `url(${collageLeft.src})` }}
+          style={{ backgroundImage: `url(${collageLeft})` }}
         />
         <div
           className="dual-image-right"
-          style={{ backgroundImage: `url(${collageWalls.src})` }}
+          style={{ backgroundImage: `url(${collageWalls})` }}
         />
         <div className="left-text-box fade-content">
           <p className="left-quote">
@@ -178,7 +178,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${shower.src})` }}
+            style={{ backgroundImage: `url(${shower})` }}
           />
         </div>
         <div className="text-block bottom-left">
@@ -200,7 +200,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${tvSet.src})` }}
+            style={{ backgroundImage: `url(${tvSet})` }}
           />
         </div>
         <div className="concept-content fade-content">
@@ -236,7 +236,7 @@ export default function PitchDeck() {
             <div className="comp-item">
               <div
                 className="comp-image"
-                style={{ backgroundImage: `url(${destroyYou.src})` }}
+                style={{ backgroundImage: `url(${destroyYou})` }}
               />
               <h3 className="comp-title">I MAY DESTROY YOU</h3>
               <p className="comp-meta">
@@ -251,7 +251,7 @@ export default function PitchDeck() {
             <div className="comp-item">
               <div
                 className="comp-image"
-                style={{ backgroundImage: `url(${babyReindeer.src})` }}
+                style={{ backgroundImage: `url(${babyReindeer})` }}
               />
               <h3 className="comp-title">BABY REINDEER</h3>
               <p className="comp-meta">
@@ -266,7 +266,7 @@ export default function PitchDeck() {
             <div className="comp-item">
               <div
                 className="comp-image"
-                style={{ backgroundImage: `url(${fleabag.src})` }}
+                style={{ backgroundImage: `url(${fleabag})` }}
               />
               <h3 className="comp-title">FLEABAG</h3>
               <p className="comp-meta">
@@ -288,7 +288,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${seoul.src})` }}
+            style={{ backgroundImage: `url(${seoul})` }}
           />
         </div>
         <div className="characters-content fade-content">
@@ -297,7 +297,7 @@ export default function PitchDeck() {
           <div className="character-card character-card-full">
             <div
               className="character-image"
-              style={{ backgroundImage: `url(${mauroImg.src})` }}
+              style={{ backgroundImage: `url(${mauroImg})` }}
             />
             <h3 className="character-name">Mauro (33)</h3>
             <p className="character-age">Sharp. Guarded. Boyish. Cracked.</p>
@@ -321,7 +321,7 @@ export default function PitchDeck() {
             <div className="character-card">
               <div
                 className="character-image"
-                style={{ backgroundImage: `url(${elenaImg.src})` }}
+                style={{ backgroundImage: `url(${elenaImg})` }}
               />
               <h3 className="character-name">
                 Elena (30 then / 64 now)
@@ -343,7 +343,7 @@ export default function PitchDeck() {
             <div className="character-card">
               <div
                 className="character-image"
-                style={{ backgroundImage: `url(${jimmyImg.src})` }}
+                style={{ backgroundImage: `url(${jimmyImg})` }}
               />
               <h3 className="character-name">Jimmy (28)</h3>
               <p className="character-cara">Mauro&apos;s lover</p>
@@ -371,7 +371,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${abstractImg.src})` }}
+            style={{ backgroundImage: `url(${abstractImg})` }}
           />
         </div>
 
@@ -431,7 +431,7 @@ export default function PitchDeck() {
         <div className="parallax-container">
           <div
             className="parallax-image"
-            style={{ backgroundImage: `url(${nanpuBridge.src})` }}
+            style={{ backgroundImage: `url(${nanpuBridge})` }}
           />
         </div>
 
@@ -570,7 +570,7 @@ export default function PitchDeck() {
         <div className="dev-layout">
           <div
             className="dev-image"
-            style={{ backgroundImage: `url(${waterskiChampion.src})` }}
+            style={{ backgroundImage: `url(${waterskiChampion})` }}
           />
           <div className="dev-columns">
             <div className="dev-block">
@@ -636,7 +636,7 @@ export default function PitchDeck() {
         <div
           className="fullscreen-bg"
           style={{
-            backgroundImage: `url(${barefooter.src})`,
+            backgroundImage: `url(${barefooter})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -653,7 +653,7 @@ export default function PitchDeck() {
           <div
             className="dev-image"
             style={{
-              backgroundImage: `url(${waterskiPyramid.src})`,
+              backgroundImage: `url(${waterskiPyramid})`,
             }}
           />
           <div className="dev-columns">
@@ -714,7 +714,7 @@ export default function PitchDeck() {
           <div
             className="parallax-image"
             style={{
-              backgroundImage: `url(${waterskiTeam.src})`,
+              backgroundImage: `url(${waterskiTeam})`,
             }}
           />
         </div>
@@ -991,7 +991,7 @@ export default function PitchDeck() {
           <div
             className="parallax-image"
             style={{
-              backgroundImage: `url(${childhoodDock.src})`,
+              backgroundImage: `url(${childhoodDock})`,
             }}
           />
         </div>
